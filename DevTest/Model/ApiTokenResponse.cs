@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace DevTest.Model
 {
-    class ApiTokenResponse: ApiResponse
+   public  class ApiTokenResponse: ApiResponse
     {
         [JsonProperty("data ")]
         public Token Data { get; set; }
