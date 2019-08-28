@@ -7,3 +7,4 @@
 /.vs
 /DevTest/.vs/DevTest/v16
 /DevTest/bin/Debug/netcoreapp2.2
+/UnitsTests/obj
