@@ -31,6 +31,8 @@ namespace DevTest.Api
                 Token token = await GetToken();
                 //display Token
                 Console.WriteLine(token.AccessToken);
+
+
               }
             catch (Exception e)
             {
