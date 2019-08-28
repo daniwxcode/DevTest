@@ -27,13 +27,19 @@ namespace DevTest.Api
         {
             try
             {
+                Console.WriteLine("1-getting tokens");
                 // get token 
                 Token token = await GetToken();
                 //display Token
                 Console.WriteLine(token.AccessToken);
 
+                var request = new RestRequest(Method.GET);
+                Console.WriteLine("Getting Employees");
+                request.AddHeader("access_token", $"{token.AccessToken}");
+                var rep = new RestClient(Constants.EmployeesUrl).Execute(request);
+                new ApiEmployeesResponse().Display(rep.Content);
 
-              }
+            }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
