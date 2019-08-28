@@ -33,10 +33,13 @@ namespace DevTest.Api
                 //display Token
                 Console.WriteLine(token.AccessToken);
 
+                // Getting list of Employees
                 var request = new RestRequest(Method.GET);
                 Console.WriteLine("Getting Employees");
                 request.AddHeader("access_token", $"{token.AccessToken}");
                 var rep = new RestClient(Constants.EmployeesUrl).Execute(request);
+
+                //Diplaying Results
                 new ApiEmployeesResponse().Display(rep.Content);
 
             }
