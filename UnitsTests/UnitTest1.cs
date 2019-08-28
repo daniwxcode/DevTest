@@ -1,3 +1,4 @@
+using DevTest.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitsTests
@@ -6,8 +7,15 @@ namespace UnitsTests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1 ()
+        public  void MustResturnTokenNotNull ()
         {
+            var  token = DevTest.Api.Server.GetToken();
+            Assert.IsNotNull(token);
+        }
+        public void MustRetunExactlyAnApiResponse ()
+        {
+            var token = DevTest.Api.Server.GetToken();
+            Assert.AreEqual(token.GetType(),typeof(Token));
         }
     }
 }
